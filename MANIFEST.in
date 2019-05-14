@@ -1,0 +1,6 @@
+include README.md
+include MANIFEST.in
+include VERSION.txt
+include setup_helpers.py
+include requirements.txt
+include requirements*.txt
