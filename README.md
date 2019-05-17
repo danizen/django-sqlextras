@@ -34,20 +34,26 @@ This package will provide the following abstractions:
 
 ### `sqlextras.types.SQLFile`
 
-A simple, frozen object with the following files:
+A simple, frozen object with the following properties:
 
   * *path* - path to a file, assumed to be relative to `settings.BASE_DIR`
-  * *sha1sum* - a checksum that will be verified against the files contents
+  * *sha1sum* - an checksum that will be verified against the files contents
+
+Some methods may be provided that assist in the other abstractions below.  
+
 
 ### `sqlextras.operations.RunSQLFile`
 
 This operation will support the following arguments:
 
   * *file* - an instance of `SQLFile` above.
-  * *backards_file* - an instance of `SQLFile` above.
-  * *state_operations* - see `django.db.migrations.operations.RunSQL`
-  * *hints* - see `django.db.migrations.operations.RunSQL`
-  * *elidable* - see `django.db.migrations.operations.RunSQL`
+  
+And keywords arguments:
+
+  * *backards_file* - an optional instance of `SQLFile` above, defaults to `None`
+  * *state_operations* - see `django.db.migrations.operations.RunSQL`, defaults to `None`
+  * *hints* - see `django.db.migrations.operations.RunSQL`, defaults to `None`.
+  * *elidable* - see `django.db.migrations.operations.RunSQL`, defaults to `False`
   * *dbshell* - a flag indicating whether this operation should be run through the 
                 backend's command-line, which defaults to `False`.
   
