@@ -110,4 +110,10 @@ mysql OK as well, and accept pull requests.
   commands can print the relations, e.g. TABLE, VIEW, FUNCTION, PROCEDURE, INDEX objects that
   are expected in your database.   See `sqlextras.sql` for some limited developed ideas. 
 
-* Use `sqlparse` to look for DDL statements in the file, and do some linting. 
+* Use `sqlparse` to look for DDL statements in the file, and do some linting.
+
+* Provide commands to recompute a checksum - a little dangerous to the concept of operation, but will be necessary sometimes.
+
+* Provide commands to revise files, e.g. if a file is a "CREATE OR REPLACE VIEW", why not support a "dupsqlmigrate" management
+  command that makes a copy of a file and uses the present file as the backwards file?  (ANSWER - the user hasn't tested it yet, and so
+  the capability to recompute the checksum might be needed).
